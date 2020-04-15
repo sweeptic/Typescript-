@@ -10,4 +10,4 @@ Last updated 3/2020
  English
  English [Auto-generated], French [Auto-generated], 6 more
 
- Lesson 4. Installing TypeScript
+Lesson 5. Using TypeScript
