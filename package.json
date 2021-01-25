@@ -1,0 +1,23 @@
+{
+  "name": "typescript-",
+  "version": "1.0.0",
+  "description": "Understanding TypeScript - 2020 Edition\r Don't limit the Usage of TypeScript to Angular! Learn the Basics, its Features, Workflows and how to use it!\r BESTSELLER\r 4.7 (12,836 ratings)\r 60,236 students enrolled\r Created by Maximilian Schwarzmüller\r Last updated 3/2020\r  English\r  English [Auto-generated], French [Auto-generated], 6 more",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sweeptic/Typescript-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sweeptic/Typescript-/issues"
+  },
+  "homepage": "https://github.com/sweeptic/Typescript-#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
