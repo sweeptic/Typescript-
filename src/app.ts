@@ -1,69 +1,69 @@
-console.log('hello again...');
+// type Person = {
+//   name: string;
+//   age: number;
 
-/* LET CONST */
-// const userName = 'A';
-// userName = 'Attila';
+//   greet(phrase: string): void;
+// };
 
-// var age = 33;
+// type AddFn = (a: number, b: number) => number;
+// let add3: AddFn;
 
-// const add = (a: number, b: number) => a + b;
+// add3 = (n1: number, n2: number) => {
+//   return n1 + n2;
+// };
 
-// const printOutput: (a: number | string) => void = output => console.log(output);
-
-/*ARROW FUNCTION*/
-// const add = (a: number, b: number) => a + b;
-const add: (a: number, b: number) => number = (a, b) => a + b;
-
-// const printOutput = (output: number | string) => console.log(output);
-const printOutput: (a: number | string) => void = output => console.log(output);
-
-const button = document.querySelector('button');
-
-if (button) {
-  button.addEventListener('click', event => console.log(event));
+interface AddFn {
+  (a: number, b: number): number;
 }
 
-/*DEFAULT FUNCTION PARAMETER*/
+let add35: AddFn;
 
-const add2 = (a: number, b: number = 1) => a + b;
-// const add2: (a: number, b: number ) => number = (a, b = 1) => a + b; ??
-// console.log(add2(3));
-
-/* THE SPREAD OPERATOR*/
-const hobbies = ['sport', 'cooking'];
-const hobbies2 = ['hiking', ...hobbies];
-
-// hobbies.push(...hobbies2);
-
-// console.log(hobbies2);
-
-const person = {
-  firstName: 'Attila',
-  age: 11,
+add35 = (n1: number, n2: number) => {
+  return n1 + n2;
 };
 
-const copiedPerson = { ...person };
+interface Named {
+  readonly name?: string; //optional properties
+  outputName?: string; //optional parameter
+}
 
-// console.log(copiedPerson);
+interface Greetable extends Named {
+  greet(phrase: string): void;
+}
 
-/*REST PARAMETERS*/
+class Person implements Greetable {
+  name?: string; //optional properties
+  age = 30;
+  constructor(n?: string) {
+    if (n) {
+      this.name = n;
+    }
+  }
+  greet(phrase: string) {
+    if (this.name) {
+      console.log(phrase + '' + this.name);
+    } else {
+      console.log('hi');
+    }
+  }
+}
 
-const add3 = (...args: number[]) => {
-  //   console.log(...args);
-};
+/**/
+/**/
+/**/
+let user1: Greetable;
 
-const addedNumbers = add3(4, 4, 2, 5, 6, 3.5);
+user1 = new Person('Max');
+// user1.name = 'Manuel'; //readonly!
 
-// console.log(addedNumbers);
+// user1 = {
+//   name: 'Max',
+//   age: 30,
+//   greet(phrase: string) {
+//     console.log(phrase + '' + this.name);
+//   },
+// };
 
-/*ARRAY OBJECT DESTRUCTURING*/
-// const hobby1 = hobbies[0];
-// const hobby2 = hobbies[1];
+console.log(user1);
 
-const [hobby1, hobby2, ...remainingHobbies] = hobbies;
-
-console.log(hobby1, hobby2, hobbies);
-
-const { firstName: userName, age } = person;
-
-console.log(userName, age, person);
+user1.greet('Hi my name is ');
